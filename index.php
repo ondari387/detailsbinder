@@ -66,7 +66,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
         }
 
         .modal-dialog {
-            width: 360px !important;
+            width: 350px !important;
         }
 
         .classs {
@@ -110,7 +110,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o"></i></span>
                         </div>
-                        <input type="number" class="form-control" id="id_no" name="id_no" placeholder="Enter id no" required>
+                        <input type="number" class="form-control" id="id_no" name="id_no" maxlength="8" placeholder="Enter id no" required>
                     </div>
                 </div>
 
@@ -144,7 +144,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="dob" name="dob" placeholder="yyyymmdd" required>
+                        <input type="text" class="form-control" id="dob" name="dob" placeholder="yyyymmdd" maxlength="8" required>
 
                     </div>
                 </div>
@@ -186,8 +186,8 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                 });
 
                 function submitText() {
-                    var html = " IDKYA2447136568<<4572<<<<<1681" + "<br>" + $("#dob").val().substring(2, 8) +
-                        "3" + document.querySelector("input[name=gender]:checked").value + "1703168<B0".replace('<', '&lt;').replace('>', '&gt;') + $("#id_no").val() + "M<<1".replace('<', '&lt;').replace('>', '&gt;') + "<br> " +
+                    var html = " IDKYA2441216280<<3981<<<<<3982" + "<br>" + $("#dob").val().substring(2, 8) +
+                        "0" + document.querySelector("input[name=gender]:checked").value + "1702150<B00".replace('<', '&lt;').replace('>', '&gt;') + $("#id_no").val() + "M<<".replace('>', '&gt;') + "<br> " +
                         $("#fname").val() + "<".replace('<', '&lt;').replace('>', '&gt;') + $("#mname").val() +
                         "<".replace('<', '&lt;').replace('>', '&gt;') + $("#lname").val() + "<<<<<<<".replace('<', '&lt;').replace('>', '&gt;');
                     $("#bodyModal").html(html);
