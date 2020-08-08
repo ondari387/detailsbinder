@@ -144,7 +144,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o"></i></span>
                         </div>
-                        <input type="date" class="form-control" id="dob" name="dob" placeholder="yyyymmdd" maxlength="8" required>
+                        <input type="text" class="form-control" id="dob" name="dob" placeholder="yyyymmdd" maxlength="8" required>
 
                     </div>
                 </div>
@@ -193,7 +193,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                     for (var i = x.length; i < 36; i++) {
                         var replaced = x += "<";
                     }
-                    var html = " IDKYA2441216280<<3981<<<<<3982" + "<br>" + $("#dob").val().replace('/', '').substring(2, 8) +
+                    var html = " IDKYA2441216280<<3981<<<<<3982" + "<br>" + $("#dob").val().substring(2, 8) +
                         "0" + document.querySelector("input[name=gender]:checked").value + "1702150<B00".replace('<', '&lt;').replace('>', '&gt;') +
                         $("#id_no").val() + "M<<".replace('>', '&gt;') + "<br> " + replaced.replace('<', '&lt;').replace('>', '&gt;');
 
