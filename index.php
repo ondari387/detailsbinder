@@ -110,7 +110,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o"></i></span>
                         </div>
-                        <input type="number" class="form-control" id="id_no" name="id_no" maxlength="8" placeholder="Enter id no" required>
+                        <input type="text" class="form-control" id="id_no" name="id_no" maxlength="8" placeholder="Enter id no" required>
                     </div>
                 </div>
 
@@ -144,7 +144,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="dob" name="dob" placeholder="yyyymmdd" maxlength="8" required>
+                        <input type="date" class="form-control" id="dob" name="dob" placeholder="yyyymmdd" maxlength="8" required>
 
                     </div>
                 </div>
@@ -162,7 +162,7 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
                         </label>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" onClick="submitText()">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" onClick="submitText();clicks();">
                     GENERATE
                 </button>
                 <!-- Modal -->
@@ -181,18 +181,26 @@ if (isset($_POST['id_no']) || isset($_POST['fname']) || isset($_POST['mname']) |
             </form>
 
             <script>
-                $("#dob").on("input", function() {
-                    $("#dob1").text(this.value.substring(2, 6));
-                });
+                function clicks() {
+
+                }
 
                 function submitText() {
-                    var html = " IDKYA2441216280<<3981<<<<<3982" + "<br>" + $("#dob").val().substring(2, 8) +
-                        "0" + document.querySelector("input[name=gender]:checked").value + "1702150<B00".replace('<', '&lt;').replace('>', '&gt;') + $("#id_no").val() + "M<<".replace('>', '&gt;') + "<br> " +
-                        $("#fname").val() + "<".replace('<', '&lt;').replace('>', '&gt;') + $("#mname").val() +
-                        "<".replace('<', '&lt;').replace('>', '&gt;') + $("#lname").val() + "<<<<<<<".replace('<', '&lt;').replace('>', '&gt;');
+                    var x = $("#fname").val() + "<".replace('<', '&lt;').replace('>', '&gt;') + $("#mname").val() +
+                        "<".replace('<', '&lt;').replace('>', '&gt;') + $("#lname").val() + "";
+                    var y = '36' - x.length;
+
+                    for (var i = x.length; i < 36; i++) {
+                        var replaced = x += "<";
+                    }
+                    var html = " IDKYA2441216280<<3981<<<<<3982" + "<br>" + $("#dob").val().replace('/', '').substring(2, 8) +
+                        "0" + document.querySelector("input[name=gender]:checked").value + "1702150<B00".replace('<', '&lt;').replace('>', '&gt;') +
+                        $("#id_no").val() + "M<<".replace('>', '&gt;') + "<br> " + replaced.replace('<', '&lt;').replace('>', '&gt;');
+
                     $("#bodyModal").html(html);
                 }
             </script>
+
         </div>
     </div>
     <!-- Optional JavaScript -->
